@@ -1,4 +1,4 @@
-s# RoundedProgressBar
+# RoundedProgressBar
 
 RoundedProgressBar is a native progress bar made in Kotlin which is renderized natively in Android devices.
 
