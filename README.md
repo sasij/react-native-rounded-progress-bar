@@ -15,8 +15,13 @@ RoundedProgressBar is a native progress bar made in Kotlin which is renderized n
 
 ```sh
 $ npm ... //TODO
+```
+
 ### Usage
+
 javascript
+
+```
 import RoundedProgressBar from 'src/components/RoundedProgressBar';
 
 render() {
@@ -27,20 +32,28 @@ render() {
                     backgroundWidth={30}
                     progressWidth={30}/>
   }
+```
+
 ### Props
-| Name | Description |
-| ------ | ------ |
-| percentage | Decimal value used for displaying the progress, for example, 0.5 or 0.25|
-| progressWidth | The width of the progress bar |
-| backgroundWidth | The width of the background of the progress bar |
-| progressBarColor | The color of the progress bar |
-| backgroundBarColor | The background color of the border |
-| backgroundColor | The inner background color of the component |
+
+| Name               | Description                                                              |
+| ------------------ | ------------------------------------------------------------------------ |
+| percentage         | Decimal value used for displaying the progress, for example, 0.5 or 0.25 |
+| progressWidth      | The width of the progress bar                                            |
+| backgroundWidth    | The width of the background of the progress bar                          |
+| progressBarColor   | The color of the progress bar                                            |
+| backgroundBarColor | The background color of the border                                       |
+| backgroundColor    | The inner background color of the component                              |
+
 ### Author
+
 Domestika
+
 ### License
+
 MIT
+
 ### Keywords
+
 react native progress progressbar circle indicator
 **Happy hacking!**
-```
