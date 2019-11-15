@@ -19,9 +19,7 @@ $ npm ... //TODO
 
 ### Usage
 
-javascript
-
-```
+```javascript
 import RoundedProgressBar from 'src/components/RoundedProgressBar';
 
 render() {
@@ -56,4 +54,5 @@ MIT
 ### Keywords
 
 react native progress progressbar circle indicator
+
 **Happy hacking!**
