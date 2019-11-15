@@ -1,4 +1,5 @@
 buildscript {
+  ext.kotlin_version = '1.3.60'
   repositories {
     maven {
       url 'https://maven.google.com/'
@@ -9,10 +10,13 @@ buildscript {
 
   dependencies {
     classpath 'com.android.tools.build:gradle:3.3.1'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 def safeExtGet(prop, fallback) {
     rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
@@ -63,5 +67,7 @@ dependencies {
     def androidXBrowser = safeExtGet('androidXBrowser', androidXVersion)
     implementation "androidx.annotation:annotation:$androidXAnnotation"
     implementation "androidx.browser:browser:$androidXBrowser"
+    compile "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
   }
 }
