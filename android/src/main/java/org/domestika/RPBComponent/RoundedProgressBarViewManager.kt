@@ -16,7 +16,7 @@ class RoundedProgressBarViewManager : ViewGroupManager<RoundedProgressBar>() {
 
     override fun getName() = REACT_CLASS
 
-    @ReactProp(name = "percentage")
+    @ReactProp(name = "percent")
     fun setPercentage(roundedProgressBar: RoundedProgressBar, value: Float) {
         roundedProgressBar.setProgressWithAnimation(value)
     }
@@ -26,7 +26,7 @@ class RoundedProgressBarViewManager : ViewGroupManager<RoundedProgressBar>() {
         roundedProgressBar.radius = value
     }
 
-    @ReactProp(name = "progressWidth")
+    @ReactProp(name = "borderWidth")
     fun setProgressWidth(roundedProgressBar: RoundedProgressBar, value: Float) {
         roundedProgressBar.progressWidth = value
     }
@@ -36,17 +36,17 @@ class RoundedProgressBarViewManager : ViewGroupManager<RoundedProgressBar>() {
         roundedProgressBar.backgroundWidth = value
     }
 
-    @ReactProp(name = "progressBarColor")
+    @ReactProp(name = "color")
     fun setProgressBarColor(roundedProgressBar: RoundedProgressBar, value: String) {
         roundedProgressBar.progressBarColor = value
     }
 
-    @ReactProp(name = "backgroundBarColor")
+    @ReactProp(name = "shadowColor")
     fun setBackgroundBarColor(roundedProgressBar: RoundedProgressBar, value: String) {
         roundedProgressBar.backgroundBarColor = value
     }
 
-    @ReactProp(name = "backgroundColor")
+    @ReactProp(name = "bgColor")
     fun setBackgroundColor(roundedProgressBar: RoundedProgressBar, value: String) {
         roundedProgressBar.setBackgroundColor(Color.parseColor(value))
     }
