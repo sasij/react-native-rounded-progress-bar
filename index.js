@@ -1,1 +1,1 @@
-module.exports = require("./RoundProgressBar");
+module.exports = require("./RoundedProgressBar");
