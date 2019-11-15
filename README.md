@@ -24,7 +24,7 @@ import RoundedProgressBar from 'src/components/RoundedProgressBar';
 
 render() {
     return <RoundedProgressBar
-                    size={100}
+                    radius={100}
                     percentage={0.75}
                     progressBarColor={"#ff77CC"}
                     backgroundWidth={30}
@@ -37,6 +37,7 @@ render() {
 | Name               | Description                                                              |
 | ------------------ | ------------------------------------------------------------------------ |
 | percentage         | Decimal value used for displaying the progress, for example, 0.5 or 0.25 |
+| radius             | Size of the radius of the circle                                         |
 | progressWidth      | The width of the progress bar                                            |
 | backgroundWidth    | The width of the background of the progress bar                          |
 | progressBarColor   | The color of the progress bar                                            |
