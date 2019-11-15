@@ -1,4 +1,4 @@
-package com.domestika.customComponents.RoundedProgressBar
+package org.domestika.RPBComponent
 
 import android.graphics.Color
 import com.facebook.react.uimanager.ThemedReactContext

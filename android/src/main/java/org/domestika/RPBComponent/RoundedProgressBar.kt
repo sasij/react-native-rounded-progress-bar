@@ -1,4 +1,4 @@
-package com.domestika.customComponents.RoundedProgressBar
+package org.domestika.RPBComponent
 
 import android.animation.ObjectAnimator
 import android.content.Context
