@@ -1,5 +1,5 @@
 import React from 'react';
-import { requireNativeComponent, Platform, View } from 'react-native';
+import { requireNativeComponent, Platform } from 'react-native';
 import ProgressCircle from 'react-native-progress-circle';
 
 const RPBComponent = Platform.select({
@@ -11,11 +11,24 @@ const RPBComponent = Platform.select({
 });
 
 export default class RoundedProgressBar extends React.Component {
+
+  formatProps(props) {
+    return Platform.OS === 'android' ? 
+    {
+        ...props,
+        percent: props.percent / 100,
+        borderWidth: props.borderWidth + 10,
+        backgroundWidth: props.backgroundWidth + 10,
+        radius: null
+    } : 
+    props
+  }
+
   render() {
     const { size } = this.props;
     return (
-      <RPBComponent
-        {...this.props}
+      <RPBComponent 
+        {...this.formatProps(this.props)}
         style={{
           width: size,
           height: size,
