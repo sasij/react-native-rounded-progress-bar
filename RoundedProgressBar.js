@@ -17,8 +17,8 @@ export default class RoundedProgressBar extends React.Component {
     {
         ...props,
         percent: props.percent / 100,
-        borderWidth: props.borderWidth + 10,
-        backgroundWidth: props.backgroundWidth + 10,
+        borderWidth: props.borderWidth + 3,
+        backgroundWidth: props.backgroundWidth + 3,
         radius: null
     } : 
     props
