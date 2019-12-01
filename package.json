@@ -1,6 +1,6 @@
 {
   "name": "react-native-rounded-progress-bar",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Animated round progress bar",
   "main": "index.js",
   "types": "index.d.ts",
@@ -15,7 +15,7 @@
     "react-native",
     "animated"
   ],
-  "author": "Juanjose Sanchez <juanjose.sanchez@domestika.org>",
+  "author": "Domestika",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sasij/react-native-rounded-progress-bar/issues"
