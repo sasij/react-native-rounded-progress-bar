@@ -25,9 +25,7 @@
     "react": "*",
     "react-native": ">=0.50.3"
   },
-  "dependencies": {
-    "react-native-progress-circle": "^2.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "react": "16.0.0",
     "react-native": "0.50.3"
