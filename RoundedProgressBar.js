@@ -23,7 +23,9 @@ const RoundedProgressBar = props => {
           borderWidth: props.borderWidth || 4,
           size: props.size / 2 || 20,
           color: props.color || "#c2c2c2",
-          bgColor: props.bgColor || "#fff"
+          bgColor: props.bgColor || "#fff",
+          backgroundWidth: props.backgroundWidth || 4,
+          shadowColor: props.shadowColor || "#9e9e9e"
         };
   };
 
