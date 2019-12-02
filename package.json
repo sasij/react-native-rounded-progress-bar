@@ -1,6 +1,6 @@
 {
   "name": "react-native-rounded-progress-bar",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Animated round progress bar",
   "main": "index.js",
   "types": "index.d.ts",
