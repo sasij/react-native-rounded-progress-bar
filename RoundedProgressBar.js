@@ -1,42 +1,70 @@
-import React from 'react';
-import { requireNativeComponent, Platform } from 'react-native';
-import ProgressCircle from 'react-native-progress-circle';
+import React from "react";
+import { View, requireNativeComponent, Platform } from "react-native";
 
-const RPBComponent = Platform.select({
-  // sorry iOS :(
-  ios: ProgressCircle,
-
-  // name from overriden `getName` function
-  android: requireNativeComponent('RoundedProgressBar')
+const RNRoundedProgressBar = Platform.select({
+  ios: requireNativeComponent("RoundedProgressBarIOS"),
+  android: requireNativeComponent("RoundedProgressBar")
 });
 
-export default class RoundedProgressBar extends React.Component {
+const isAndroid = Platform.OS === "android";
 
-  formatProps(props) {
-    return Platform.OS === 'android' ? 
-    {
-        ...props,
-        percent: props.percent / 100,
-        borderWidth: props.borderWidth + 3,
-        backgroundWidth: props.backgroundWidth + 3,
-        radius: null
-    } : 
-    props
-  }
+const RoundedProgressBar = props => {
+  const formattedProps = () => {
+    return isAndroid
+      ? {
+          ...props,
+          percent: props.percent / 100,
+          borderWidth: props.borderWidth + 3,
+          backgroundWidth: props.backgroundWidth + 3,
+          radius: null
+        }
+      : {
+          percent: props.percent / 100 || 0,
+          borderWidth: props.borderWidth || 4,
+          size: props.size / 2 || 20,
+          color: props.color || "#c2c2c2",
+          bgColor: props.bgColor || "#fff",
+          backgroundWidth: props.backgroundWidth || 4,
+          shadowColor: props.shadowColor || "#9e9e9e"
+        };
+  };
 
-  render() {
-    const { size } = this.props;
-    return (
-      <RPBComponent 
-        {...this.formatProps(this.props)}
+  const renderAndroid = () => (
+    <RNRoundedProgressBar
+      {...formattedProps()}
+      style={{
+        width: props.size,
+        height: props.size,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}
+    />
+  );
+
+  const renderIOS = () => (
+    <View
+      style={{
+        width: 100,
+        height: 100,
+        justifyContent: "center",
+        alignItems: "center"
+      }}
+    >
+      <View
         style={{
-          width: size,
-          height: size,
-          display: "flex",
-          justifyContent: 'center',
-          alignItems: 'center' 
+          position: "absolute",
+          top: 0,
+          left: 0
         }}
-      />
-    );
-  }
-}
+      >
+        <RNRoundedProgressBar props={formattedProps()} />
+      </View>
+      {props.children}
+    </View>
+  );
+
+  return isAndroid ? renderAndroid() : renderIOS();
+};
+
+export default RoundedProgressBar;

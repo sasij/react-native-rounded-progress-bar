@@ -1,6 +1,6 @@
 # RoundedProgressBar
 
-RoundedProgressBar is a native progress bar made in Kotlin which is renderized natively in Android devices.
+RoundedProgressBar is a native progress bar made in Kotlin and Swift which is renderized natively for Android and iOS devices.
 
 ![rounded progress bar](https://docs.google.com/uc?id=1srN5phBDodE-1YJ9p3Iy8EtEiFDNHyKU)
 
@@ -11,25 +11,28 @@ RoundedProgressBar is a native progress bar made in Kotlin which is renderized n
 - Set a different radius
 - Light, there is no dependencies there
 
-### Installation
+## Installation
 
-```sh
-$ npm ... //TODO
-```
+- `$ yarn add react-native-rounded-progress-bar`
+- `cd ios/ && pod install`
 
 ### Usage
 
 ```javascript
-import RoundedProgressBar from 'src/components/RoundedProgressBar';
+import RoundedProgressBar from "react-native-rounded-progress-bar";
 
-render() {
-    return <RoundedProgressBar
-                    radius={100}
-                    percentage={0.75}
-                    progressBarColor={"#ff77CC"}
-                    backgroundWidth={30}
-                    progressWidth={30}/>
-  }
+<RoundedProgressBar
+  percent={0.75}
+  borderWidth={4}
+  size={40}
+  color="#F02D00"
+  bgColor="#DF8BD1"
+  backgroundWidth={30}
+  progressWidth={30}
+  radius={100}
+>
+  <Text>Loading...</Text>
+</RoundedProgressBar>;
 ```
 
 ### Props
