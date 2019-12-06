@@ -45,21 +45,20 @@ const RoundedProgressBar = props => {
   const renderIOS = () => (
     <View
       style={{
-        width: 100,
-        height: 100,
+        width: props.size,
+        height: props.size,
         justifyContent: "center",
         alignItems: "center"
       }}
     >
-      <View
+      <RNRoundedProgressBar
+        props={options}
         style={{
           position: "absolute",
           top: 0,
           left: 0
         }}
-      >
-        <RNRoundedProgressBar props={formattedProps()} />
-      </View>
+      />
       {props.children}
     </View>
   );
