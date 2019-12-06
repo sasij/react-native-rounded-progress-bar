@@ -42,26 +42,29 @@ const RoundedProgressBar = props => {
     />
   );
 
-  const renderIOS = () => (
-    <View
-      style={{
-        width: props.size,
-        height: props.size,
-        justifyContent: "center",
-        alignItems: "center"
-      }}
-    >
-      <RNRoundedProgressBar
-        props={options}
+  const renderIOS = () => {
+    const centered = props.size / 4;
+    return (
+      <View
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0
+          width: props.size,
+          height: props.size,
+          justifyContent: "center",
+          alignItems: "center"
         }}
-      />
-      {props.children}
-    </View>
-  );
+      >
+        <RNRoundedProgressBar
+          props={formattedProps()}
+          style={{
+            position: "absolute",
+            top: centered,
+            left: centered
+          }}
+        />
+        {props.children}
+      </View>
+    );
+  };
 
   return isAndroid ? renderAndroid() : renderIOS();
 };
